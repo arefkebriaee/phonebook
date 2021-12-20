@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <ul>
+    {% for contact in contacts %}
+    <li class="card">
+      <a href="{{ contact.get_absolute_url }}">
+        <img src="{{ contact.image }}" alt="" />
+        <h3>{{ contact.contact_name }}</h3>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock content %}
