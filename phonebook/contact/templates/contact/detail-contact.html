@@ -1,3 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 <h2>{{ contact.contact_name }}</h2>
-<img src="" alt="" /><span>number</span> {% endblock content %}
+<img src="" alt="" />
+{% for mobile in mobiles %}
+<span>{{ mobile.number}}</span>
+{% endfor %} {% endblock content %}

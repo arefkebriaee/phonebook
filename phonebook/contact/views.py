@@ -1,5 +1,5 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from .models import Contact
+from django.shortcuts import render, get_object_or_404, get_list_or_404
+from .models import Contact, Mobile
 
 
 def home(request):
@@ -13,4 +13,5 @@ def show_all(request):
 
 def one_contact(request, id, name):
     contact = get_object_or_404(Contact, id=id, contact_name=name)
-    return render(request, "contact/detail-contact.html", {'contact': contact})
+    mobiles = get_list_or_404(Mobile, owner=id)
+    return render(request, "contact/detail-contact.html", {'contact': contact, 'mobiles': mobiles})
