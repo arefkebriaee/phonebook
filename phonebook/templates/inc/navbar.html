@@ -1,0 +1,19 @@
+<div class="navbar">
+  <ul class="navbar-ul">
+    <li class="navbar-link">
+      <a href="{% url 'contact:home'%}">Home</a>
+    </li>
+    {% if request.user.is_authenticated %}
+    <li class="navbar-link">
+      <a href="{% url 'accounts:user_logout'%}">Log out</a>
+    </li>
+    {% else %}
+    <li class="navbar-link">
+      <a href="{% url 'accounts:user_login'%}">Log in</a>
+    </li>
+    <li class="navbar-link">
+      <a href="{% url 'accounts:user_register'%}">Register</a>
+    </li>
+    {% endif %}
+  </ul>
+</div>

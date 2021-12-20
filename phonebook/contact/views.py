@@ -1,5 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Contact
+
+
+def home(request):
+    return render(request, 'contact/home.html')
 
 
 def show_all(request):

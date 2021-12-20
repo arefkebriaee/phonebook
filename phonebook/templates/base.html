@@ -7,6 +7,8 @@
     <title>Phone book</title>
   </head>
   <body>
-    {% block content %}{% endblock content %}
+    {% include 'inc/navbar.html'%} {% include 'inc/messages.html' %}
+    <!-- ############################################ -->
+    {%block content %}{% endblock content %}
   </body>
 </html>
