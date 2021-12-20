@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404
-from .models import Contact, Mobile
+from .models import Contact, Mobile, Phone
 
 
 def home(request):
@@ -13,5 +13,6 @@ def show_all(request):
 
 def one_contact(request, id, name):
     contact = get_object_or_404(Contact, id=id, contact_name=name)
-    mobiles = get_list_or_404(Mobile, owner=id)
-    return render(request, "contact/detail-contact.html", {'contact': contact, 'mobiles': mobiles})
+    mobiles = Mobile.objects.filter(owner=id)
+    phones = Phone.objects.filter(owner=id)
+    return render(request, "contact/detail-contact.html", {'contact': contact, 'mobiles': mobiles, 'phones': phones})

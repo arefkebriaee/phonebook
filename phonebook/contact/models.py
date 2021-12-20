@@ -31,3 +31,12 @@ class Mobile(models.Model):
 
     def __str__(self) -> str:
         return str(self.number)
+
+
+class Phone(models.Model):
+    owner = models.ForeignKey(
+        Contact, on_delete=models.CASCADE, related_name='phone')
+    number = PhoneNumberField(blank=False)
+
+    def __str__(self) -> str:
+        return str(self.number)
