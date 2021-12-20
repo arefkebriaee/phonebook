@@ -1,0 +1,105 @@
+div.container {
+  display: block;
+  width: 70rem;
+  min-height: 30rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem 2rem;
+  border-radius: 1rem;
+  background-color: rgba(8, 8, 49, 0.7);
+
+  img {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 10rem;
+    background-color: white;
+  }
+
+  h2 {
+    display: inline-block;
+    position: absolute;
+    top: 3rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    // letter-spacing: 1px;
+    color: orange;
+  }
+
+  p {
+    display: inline-block;
+    position: absolute;
+    top: 5rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  ul.ul-container {
+    width: 100%;
+    height: 22rem;
+    padding: 0 0;
+    overflow-y: auto;
+    // background-color: orange;
+
+    li.numbers {
+      float: left;
+      width: calc((100% - 4rem) / 3);
+      height: 8rem;
+      padding: 0.25rem 1rem;
+      margin-right: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: black 4px 4px 10px;
+      background-color: rgba(4, 4, 24, 0.7);
+      transition: ease-in-out 0.3s;
+
+      &:nth-of-type(3n + 3) {
+        margin-right: 0;
+      }
+
+      &:hover {
+        box-shadow: rgb(29, 29, 29) 4px 4px 10px;
+        background-color: rgba(123, 123, 163, 0.7);
+
+        > span {
+          color: rgb(8, 8, 49);
+        }
+
+        li.number {
+          color: rgb(8, 8, 49);
+        }
+      }
+
+      span {
+        display: block;
+        height: 1rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        line-height: 1rem;
+        color: white;
+        transition: ease-in-out 0.3s;
+      }
+
+      ul.inner {
+        height: 5rem;
+        overflow-x: hidden;
+        overflow-y: auto;
+        // background-color: white;
+
+        li.number {
+          margin-bottom: 0.5rem;
+          color: white;
+          padding-left: 1rem;
+          transition: ease-in-out 0.3s;
+          //   background-color: pink;
+
+          &:hover {
+            color: orange;
+          }
+        }
+      }
+    }
+  }
+}

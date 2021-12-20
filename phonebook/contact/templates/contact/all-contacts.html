@@ -1,7 +1,39 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}{% load static %} {% block content %} {% block styles%}
+<link rel="stylesheet" href="/static/contact/styles/all-contact.css" />
+{% endblock styles %}
 <div class="container">
   <ul>
     {% for contact in contacts %}
+    <li class="card">
+      <a href="{{ contact.get_absolute_url }}">
+        <img src="{{ contact.image }}" alt="" />
+        <h3>{{ contact.contact_name }}</h3>
+      </a>
+    </li>
+    <li class="card">
+      <a href="{{ contact.get_absolute_url }}">
+        <img src="{{ contact.image }}" alt="" />
+        <h3>{{ contact.contact_name }}</h3>
+      </a>
+    </li>
+    <li class="card">
+      <a href="{{ contact.get_absolute_url }}">
+        <img src="{{ contact.image }}" alt="" />
+        <h3>{{ contact.contact_name }}</h3>
+      </a>
+    </li>
+    <li class="card">
+      <a href="{{ contact.get_absolute_url }}">
+        <img src="{{ contact.image }}" alt="" />
+        <h3>{{ contact.contact_name }}</h3>
+      </a>
+    </li>
+    <li class="card">
+      <a href="{{ contact.get_absolute_url }}">
+        <img src="{{ contact.image }}" alt="" />
+        <h3>{{ contact.contact_name }}</h3>
+      </a>
+    </li>
     <li class="card">
       <a href="{{ contact.get_absolute_url }}">
         <img src="{{ contact.image }}" alt="" />

@@ -1,10 +1,28 @@
-{% extends 'base.html' %} {% block content %}
-<h2>{{ contact.contact_name }}</h2>
-<img src="" alt="" />
-{% for mobile in mobiles %}
-<span>{{ mobile.number}}</span>
-{% endfor %}
-<br />
-{% for phone in phones %}
-<span>{{ phone.number}}</span>
-{% endfor %} {% endblock content %}
+{% extends 'base.html' %} {% load static %} {% block styles %}
+<!-- <link rel="stylesheet" href="/static/contact/styles/all-contact.css" /> -->
+<link rel="stylesheet" href="/static/contact/styles/detail-contact.css" />
+{% endblock styles %} {% block content %}
+<div class="container">
+  <img src="{{ contact.image }}" alt="" />
+  <h2>{{ contact.contact_name }}</h2>
+  <p>{{ contact.first_name }} {{ contact.last_name }}</p>
+  <ul class="ul-container">
+    <li class="numbers">
+      <span>mobile</span>
+      <ul class="inner">
+        {% for mobile in mobiles %}
+        <li class="number">{{ mobile.number}}</li>
+        {% endfor %}
+      </ul>
+    </li>
+    <li class="numbers">
+      <span>phone</span>
+      <ul class="inner">
+        {% for phone in phones %}
+        <li class="number">{{ phone.number}}</li>
+        {% endfor %}
+      </ul>
+    </li>
+  </ul>
+</div>
+{% endblock content %}

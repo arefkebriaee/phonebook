@@ -1,0 +1,58 @@
+div.container {
+  display: block;
+  width: 70rem;
+  min-height: 30rem;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  background-color: rgba(8, 8, 49, 0.7);
+}
+
+div.container ul {
+  display: block;
+  max-height: 24rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 2rem;
+}
+
+div.container ul li.card {
+  float: left;
+  width: calc((100% - 4rem) / 3);
+  height: 4rem;
+  margin-right: 2rem;
+  margin-bottom: 3rem;
+  border-radius: 0.5rem;
+  background-color: rgba(8, 8, 49, 0.85);
+}
+
+div.container ul li.card:nth-of-type(3n + 3) {
+  margin-right: 0;
+}
+
+div.container ul li.card a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+div.container ul li.card a img {
+  width: 4rem;
+  height: 4rem;
+  top: -2rem;
+  border-radius: 10rem;
+  border: solid rgba(8, 8, 49, 0.85) 2px;
+  background-color: white;
+}
+
+div.container ul li.card a h3 {
+  position: absolute;
+  left: 5rem;
+  top: 1.25rem;
+  font-size: 1.25rem;
+  color: white;
+}
+/*# sourceMappingURL=all-contact.css.map */

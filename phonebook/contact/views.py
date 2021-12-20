@@ -8,6 +8,7 @@ def home(request):
 
 def show_all(request):
     contact_list = Contact.objects.all()
+    print(contact_list[0].image)
     return render(request, 'contact/all-contacts.html', {'contacts': contact_list})
 
 

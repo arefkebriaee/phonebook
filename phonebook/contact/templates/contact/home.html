@@ -1,6 +1,10 @@
-{% extends 'base.html' %} {% block content %}
-<section>
-  <p>Well come to phonebook</p>
-  <div><input type="text" /><button type="submit"></button></div>
+{% extends 'base.html' %} {% block styles %}
+<link rel="stylesheet" href="/static/contact/styles/home.css" />
+{% endblock styles %} {% block content %}
+<section class="container">
+  <!-- <p>Well come to phonebook</p> -->
+  <div class="search">
+    <input type="text" /><button type="submit">search</button>
+  </div>
 </section>
 {% endblock content %}
