@@ -40,3 +40,12 @@ class Phone(models.Model):
 
     def __str__(self) -> str:
         return str(self.number)
+
+
+class Fax(models.Model):
+    owner = models.ForeignKey(
+        Contact, on_delete=models.CASCADE, related_name='fax')
+    number = PhoneNumberField(blank=False)
+
+    def __str__(self) -> str:
+        return str(self.number)
