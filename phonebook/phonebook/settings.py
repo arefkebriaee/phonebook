@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'contact.apps.ContactConfig',
     'accounts.apps.AccountsConfig',
     'phonenumber_field',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

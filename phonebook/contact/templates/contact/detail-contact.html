@@ -3,16 +3,18 @@
 <link rel="stylesheet" href="/static/contact/styles/detail-contact.css" />
 {% endblock styles %} {% block content %}
 <div class="container">
-  <img src="{{ contact.image.url }}" alt="" />
+  <img src="{{ contact.image }}" alt="" />
   <h2>{{ contact.contact_name }}</h2>
   <p>{{ contact.first_name }} {{ contact.last_name }}</p>
   <p class="person-status">{{ contact.real_person }}</p>
+  {% if contact.birthday %}
   <p class="birthday">Birthday: {{ contact.birthday }}</p>
+  {% endif %}
   <ul class="ul-container">
     <li class="numbers">
       <span>mobile</span>
       <ul class="inner">
-        {% for mobile in mobiles %}
+        {% for mobile in contact.mobile %}
         <li class="number">{{ mobile.number}}</li>
         {% endfor %}
       </ul>
@@ -20,7 +22,7 @@
     <li class="numbers">
       <span>phone</span>
       <ul class="inner">
-        {% for phone in phones %}
+        {% for phone in contact.phone %}
         <li class="number">{{ phone.number}}</li>
         {% endfor %}
       </ul>
@@ -28,7 +30,7 @@
     <li class="numbers">
       <span>fax</span>
       <ul class="inner">
-        {% for fax in faxes %}
+        {% for fax in contact.fax %}
         <li class="number">{{ fax.number}}</li>
         {% endfor %}
       </ul>
@@ -36,7 +38,7 @@
     <li class="numbers">
       <span>social media</span>
       <ul class="inner">
-        {% for social in socials %}
+        {% for social in contact.social %}
         <li class="number">
           <a href="{{ social.address}}">{{social.name}}</a>
         </li>
@@ -46,7 +48,7 @@
     <li class="numbers">
       <span>email</span>
       <ul class="inner">
-        {% for email in emails %}
+        {% for email in contact.email %}
         <li class="number">{{email.email}}</li>
         {% endfor %}
       </ul>
@@ -54,7 +56,7 @@
     <li class="numbers">
       <span>address</span>
       <ul class="inner">
-        {% for address in addresses %}
+        {% for address in contact.address %}
         <li class="number">{{address.address}}</li>
         {% endfor %}
       </ul>
