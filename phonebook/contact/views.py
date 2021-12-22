@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404
-from .models import Contact, Mobile, Phone, Fax, Social, Email
+from .models import Contact, Mobile, Phone, Fax, Social, Email, Address
 
 
 def home(request):
@@ -18,4 +18,5 @@ def one_contact(request, id, name):
     faxes = Fax.objects.filter(owner=id)
     socials = Social.objects.filter(owner=id)
     emails = Email.objects.filter(owner=id)
-    return render(request, "contact/detail-contact.html", {'contact': contact, 'mobiles': mobiles, 'phones': phones, 'faxes': faxes, 'socials': socials, 'emails': emails})
+    addresses = Address.objects.filter(owner=id)
+    return render(request, "contact/detail-contact.html", {'contact': contact, 'mobiles': mobiles, 'phones': phones, 'faxes': faxes, 'socials': socials, 'emails': emails, 'addresses': addresses})

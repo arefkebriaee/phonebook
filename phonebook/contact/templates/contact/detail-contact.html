@@ -51,6 +51,14 @@
         {% endfor %}
       </ul>
     </li>
+    <li class="numbers">
+      <span>address</span>
+      <ul class="inner">
+        {% for address in addresses %}
+        <li class="number">{{address.address}}</li>
+        {% endfor %}
+      </ul>
+    </li>
   </ul>
 </div>
 {% endblock content %}

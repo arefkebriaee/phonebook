@@ -76,3 +76,9 @@ class Email(models.Model):
 
     def __str__(self):
         return str(self.email)
+
+
+class Address(models.Model):
+    owner = models.ForeignKey(
+        Contact, on_delete=models.CASCADE, related_name='address')
+    address = models.TextField()
