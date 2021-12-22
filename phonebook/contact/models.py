@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models.fields import URLField
+from django.db.models.fields import DateField, URLField
 from django.urls import reverse
 from django.contrib.auth.models import User
 from phonenumber_field.modelfields import PhoneNumberField
@@ -14,6 +14,7 @@ class Contact(models.Model):
     last_name = models.CharField(max_length=50, blank=True)
     image = models.ImageField(
         upload_to='images/', blank=True, default="/static/public/images/icons8-person-64.png")
+    birthday = models.DateField(blank=True, null=True)
     creator = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     real_person = models.CharField(choices=person_status, max_length=50)
     created = models.DateTimeField(auto_now_add=True)

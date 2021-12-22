@@ -37,6 +37,19 @@ div.container {
     color: white;
   }
 
+  p.person-status {
+    display: block;
+    position: absolute;
+    top: 5rem;
+    left: 25rem;
+  }
+  p.birthday {
+    display: block;
+    position: absolute;
+    top: 5rem;
+    left: 34rem;
+  }
+
   ul.ul-container {
     width: 100%;
     height: 22rem;
