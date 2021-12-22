@@ -8,6 +8,8 @@ div.container {
           transform: translate(-50%, -50%);
   padding: 2rem 2rem;
   border-radius: 1rem;
+  -webkit-box-shadow: inset #656580 -2px -2px 5px;
+          box-shadow: inset #656580 -2px -2px 5px;
   background-color: rgba(8, 8, 49, 0.7);
 }
 
@@ -43,6 +45,7 @@ div.container p.person-status {
   position: absolute;
   top: 5rem;
   left: 25rem;
+  color: orange;
 }
 
 div.container p.birthday {
@@ -50,6 +53,7 @@ div.container p.birthday {
   position: absolute;
   top: 5rem;
   left: 34rem;
+  color: orange;
 }
 
 div.container ul.ul-container {

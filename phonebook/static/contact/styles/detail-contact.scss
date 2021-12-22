@@ -7,6 +7,7 @@ div.container {
   transform: translate(-50%, -50%);
   padding: 2rem 2rem;
   border-radius: 1rem;
+  box-shadow: inset rgb(101, 101, 128) -2px -2px 5px;
   background-color: rgba(8, 8, 49, 0.7);
 
   img {
@@ -42,12 +43,14 @@ div.container {
     position: absolute;
     top: 5rem;
     left: 25rem;
+    color: orange;
   }
   p.birthday {
     display: block;
     position: absolute;
     top: 5rem;
     left: 34rem;
+    color: orange;
   }
 
   ul.ul-container {
