@@ -7,6 +7,9 @@
     <li class="navbar-link">
       <a href="{% url 'accounts:user_logout'%}">Log out</a>
     </li>
+    <li class="navbar-link">
+      <a href="">{{request.user}}</a>
+    </li>
     {% else %}
     <li class="navbar-link">
       <a href="{% url 'accounts:user_login'%}">Log in</a>

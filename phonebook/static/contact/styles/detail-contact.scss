@@ -49,7 +49,8 @@ div.container {
       width: calc((100% - 4rem) / 3);
       height: 8rem;
       padding: 0.25rem 1rem;
-      margin-right: 2rem;
+      margin-right: 1.5rem;
+      margin-bottom: 1rem;
       border-radius: 0.5rem;
       box-shadow: black 4px 4px 10px;
       background-color: rgba(4, 4, 24, 0.7);
@@ -67,8 +68,11 @@ div.container {
           color: rgb(8, 8, 49);
         }
 
-        li.number {
-          color: rgb(8, 8, 49);
+        ul.inner {
+          li.number {
+            font-weight: bold;
+            color: rgb(8, 8, 49);
+          }
         }
       }
 
@@ -93,6 +97,7 @@ div.container {
           color: white;
           padding-left: 1rem;
           transition: ease-in-out 0.3s;
+          letter-spacing: 0.5px;
           //   background-color: pink;
 
           &:hover {

@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="/static/contact/styles/detail-contact.css" />
 {% endblock styles %} {% block content %}
 <div class="container">
-  <img src="{{ contact.image }}" alt="" />
+  <img src="{{ contact.image.url }}" alt="" />
   <h2>{{ contact.contact_name }}</h2>
   <p>{{ contact.first_name }} {{ contact.last_name }}</p>
   <ul class="ul-container">
@@ -28,6 +28,16 @@
       <ul class="inner">
         {% for fax in faxes %}
         <li class="number">{{ fax.number}}</li>
+        {% endfor %}
+      </ul>
+    </li>
+    <li class="numbers">
+      <span>social media</span>
+      <ul class="inner">
+        {% for social in socials %}
+        <li class="number">
+          <a href="{{ social.address}}">{{social.name}}</a>
+        </li>
         {% endfor %}
       </ul>
     </li>
