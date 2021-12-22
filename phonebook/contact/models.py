@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models.fields import DateField, URLField
+from django.db.models.fields import DateField, EmailField, URLField
 from django.urls import reverse
 from django.contrib.auth.models import User
 from phonenumber_field.modelfields import PhoneNumberField
@@ -67,3 +67,12 @@ class Social(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+
+class Email(models.Model):
+    owner = models.ForeignKey(
+        Contact, on_delete=models.CASCADE, related_name='email')
+    email = EmailField()
+
+    def __str__(self):
+        return str(self.email)
