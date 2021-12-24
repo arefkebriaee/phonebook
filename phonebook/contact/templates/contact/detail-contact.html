@@ -3,18 +3,36 @@
 <link rel="stylesheet" href="/static/contact/styles/detail-contact.css" />
 {% endblock styles %} {% block content %}
 <div class="container">
-  <img src="{{ contact.image }}" alt="" />
-  <h2>{{ contact.contact_name }}</h2>
-  <p>{{ contact.first_name }} {{ contact.last_name }}</p>
-  <p class="person-status">{{ contact.real_person }}</p>
-  {% if contact.birthday %}
-  <p class="birthday">Birthday: {{ contact.birthday }}</p>
-  {% endif %}
+  <!-- <img src="{{ contact.image }}" alt="" /> -->
+  <div class="info">
+    <ul class="ul-info">
+      <li class="li-info">
+        <span class="title">contact name :</span>
+        <span class="data">{{ header.contact_name }}</span>
+      </li>
+      <li class="li-info">
+        <span class="title">first name :</span>
+        <span class="data">{{ header.first_name }}</span>
+      </li>
+      <li class="li-info">
+        <span class="title">last name :</span>
+        <span class="data">{{ header.last_name }}</span>
+      </li>
+      <li class="li-info">
+        <span class="title">personality :</span>
+        <span class="data">{{ header.real_person }}</span>
+      </li>
+      <li class="li-info">
+        <span class="title">birthday :</span>
+        <span class="data">{{ header.birthday }}</span>
+      </li>
+    </ul>
+  </div>
   <ul class="ul-container">
     <li class="numbers">
       <span>mobile</span>
       <ul class="inner">
-        {% for mobile in contact.mobile %}
+        {% for mobile in body.mobile %}
         <li class="number">{{ mobile.number}}</li>
         {% endfor %}
       </ul>
@@ -22,7 +40,7 @@
     <li class="numbers">
       <span>phone</span>
       <ul class="inner">
-        {% for phone in contact.phone %}
+        {% for phone in body.phone %}
         <li class="number">{{ phone.number}}</li>
         {% endfor %}
       </ul>
@@ -30,7 +48,7 @@
     <li class="numbers">
       <span>fax</span>
       <ul class="inner">
-        {% for fax in contact.fax %}
+        {% for fax in body.fax %}
         <li class="number">{{ fax.number}}</li>
         {% endfor %}
       </ul>
@@ -38,7 +56,7 @@
     <li class="numbers">
       <span>social media</span>
       <ul class="inner">
-        {% for social in contact.social %}
+        {% for social in body.social %}
         <li class="number">
           <a href="{{ social.address}}">{{social.name}}</a>
         </li>
@@ -48,7 +66,7 @@
     <li class="numbers">
       <span>email</span>
       <ul class="inner">
-        {% for email in contact.email %}
+        {% for email in body.email %}
         <li class="number">{{email.email}}</li>
         {% endfor %}
       </ul>
@@ -56,7 +74,7 @@
     <li class="numbers">
       <span>address</span>
       <ul class="inner">
-        {% for address in contact.address %}
+        {% for address in body.address %}
         <li class="number">{{address.address}}</li>
         {% endfor %}
       </ul>

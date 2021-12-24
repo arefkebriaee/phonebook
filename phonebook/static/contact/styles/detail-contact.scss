@@ -10,49 +10,94 @@ div.container {
   box-shadow: inset rgb(101, 101, 128) -2px -2px 5px;
   background-color: rgba(8, 8, 49, 0.7);
 
-  img {
-    display: inline-block;
-    width: 5rem;
-    height: 5rem;
-    margin-right: 2rem;
+  div.info {
+    display: block;
+    height: 6rem;
     margin-bottom: 1rem;
-    border-radius: 10rem;
-    background-color: white;
-  }
+    // background-color: cornflowerblue;
+    // img {
+    //   display: inline-block;
+    //   width: 5rem;
+    //   height: 5rem;
+    //   margin-right: 2rem;
+    //   margin-bottom: 1rem;
+    //   border-radius: 10rem;
+    //   background-color: white;
+    // }
 
-  h2 {
-    display: inline-block;
-    position: absolute;
-    top: 3rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    // letter-spacing: 1px;
-    color: orange;
-  }
+    ul.ul-info {
+      // background-color: orange;
+      height: 100%;
 
-  p {
-    display: inline-block;
-    position: absolute;
-    top: 5rem;
-    font-weight: bold;
-    color: white;
-  }
+      li.li-info {
+        // width: 18.5rem;
+        width: calc((100% - 4rem) / 3);
+        height: 1.5rem;
+        float: left;
+        margin-bottom: 0.5rem;
+        margin-right: 1.5rem;
+        // background-color: pink;
 
-  p.person-status {
-    display: block;
-    position: absolute;
-    top: 5rem;
-    left: 25rem;
-    color: orange;
-  }
-  p.birthday {
-    display: block;
-    position: absolute;
-    top: 5rem;
-    left: 34rem;
-    color: orange;
-  }
+        &:first-of-type {
+          display: block;
+          width: 100%;
+          height: 2rem;
 
+          span.data {
+            font-size: 1.5rem;
+          }
+        }
+
+        span.title {
+          font-size: 1.25rem;
+          line-height: 1.5rem;
+          color: white;
+        }
+
+        span.data {
+          margin-left: 1.5rem;
+          font-size: 1.25rem;
+          line-height: 1.5rem;
+          font-weight: bold;
+          color: orange;
+        }
+      }
+    }
+
+    h2 {
+      // display: inline-block;
+      position: relative;
+      top: 1rem;
+      left: 2rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      // letter-spacing: 1px;
+      color: orange;
+    }
+
+    p {
+      display: inline-block;
+      position: absolute;
+      top: 5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    p.person-status {
+      display: block;
+      position: absolute;
+      top: 5rem;
+      left: 25rem;
+      color: orange;
+    }
+    p.birthday {
+      display: block;
+      position: absolute;
+      top: 5rem;
+      left: 34rem;
+      color: orange;
+    }
+  }
   ul.ul-container {
     width: 100%;
     height: 22rem;

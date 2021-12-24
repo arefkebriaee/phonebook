@@ -25,10 +25,21 @@ div.container {
       margin-right: 2rem;
       margin-bottom: 3rem;
       border-radius: 0.5rem;
+      box-shadow: black 4px 4px 10px;
       background-color: rgba(8, 8, 49, 0.85);
+      transition: ease-in-out 0.3s;
 
       &:nth-of-type(3n + 3) {
         margin-right: 0;
+      }
+
+      &:hover {
+        box-shadow: rgb(29, 29, 29) 4px 4px 10px;
+        background-color: rgba(123, 123, 163, 0.7);
+
+        h3 {
+          color: rgb(8, 8, 49);
+        }
       }
 
       a {
@@ -47,11 +58,13 @@ div.container {
         }
 
         h3 {
-          position: absolute;
-          left: 5rem;
-          top: 1.25rem;
+          // position: absolute;
+          left: 2rem;
+          // top: 1.25rem;
+          line-height: 4rem;
           font-size: 1.25rem;
           color: white;
+          transition: ease-in-out 0.3s;
         }
       }
     }

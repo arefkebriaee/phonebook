@@ -1,4 +1,6 @@
-{% extends 'base.html' %} {% block content %} {% for i in content %}
-<p>{{ i.mobile.0.number }}</p>
-<p>{{i.car}}</p>
-{% endfor %} {% endblock content %}
+{% extends 'base.html' %} {% block content %}
+<form action="" method="post" enctype="multipart/form-data">
+  {% csrf_token %} {{form.as_p}}
+  <input type="submit" value="create" />
+</form>
+{% endblock content %}

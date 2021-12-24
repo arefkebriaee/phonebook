@@ -13,26 +13,58 @@ div.container {
   background-color: rgba(8, 8, 49, 0.7);
 }
 
-div.container img {
-  display: inline-block;
-  width: 5rem;
-  height: 5rem;
-  margin-right: 2rem;
+div.container div.info {
+  display: block;
+  height: 6rem;
   margin-bottom: 1rem;
-  border-radius: 10rem;
-  background-color: white;
 }
 
-div.container h2 {
-  display: inline-block;
-  position: absolute;
-  top: 3rem;
+div.container div.info ul.ul-info {
+  height: 100%;
+}
+
+div.container div.info ul.ul-info li.li-info {
+  width: calc((100% - 4rem) / 3);
+  height: 1.5rem;
+  float: left;
+  margin-bottom: 0.5rem;
+  margin-right: 1.5rem;
+}
+
+div.container div.info ul.ul-info li.li-info:first-of-type {
+  display: block;
+  width: 100%;
+  height: 2rem;
+}
+
+div.container div.info ul.ul-info li.li-info:first-of-type span.data {
+  font-size: 1.5rem;
+}
+
+div.container div.info ul.ul-info li.li-info span.title {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  color: white;
+}
+
+div.container div.info ul.ul-info li.li-info span.data {
+  margin-left: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: bold;
+  color: orange;
+}
+
+div.container div.info h2 {
+  position: relative;
+  top: 1rem;
+  left: 2rem;
   font-size: 1.5rem;
   font-weight: bold;
   color: orange;
 }
 
-div.container p {
+div.container div.info p {
   display: inline-block;
   position: absolute;
   top: 5rem;
@@ -40,7 +72,7 @@ div.container p {
   color: white;
 }
 
-div.container p.person-status {
+div.container div.info p.person-status {
   display: block;
   position: absolute;
   top: 5rem;
@@ -48,7 +80,7 @@ div.container p.person-status {
   color: orange;
 }
 
-div.container p.birthday {
+div.container div.info p.birthday {
   display: block;
   position: absolute;
   top: 5rem;

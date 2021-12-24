@@ -12,11 +12,11 @@ class Contact(models.Model):
     contact_name = models.CharField(max_length=50, blank=False)
     first_name = models.CharField(max_length=50, blank=True)
     last_name = models.CharField(max_length=50, blank=True)
-    image = models.ImageField(
-        upload_to='images/', blank=True, default="/static/public/images/icons8-person-64.png")
+    # image = models.ImageField(
+    #     upload_to='images/', blank=True, default="/static/public/images/icons8-person-64.png")
     birthday = models.DateField(blank=True, null=True)
     creator = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
-    real_person = models.CharField(choices=person_status, max_length=50)
+    real_person = models.CharField(max_length=50)
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
