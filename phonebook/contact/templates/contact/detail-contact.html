@@ -27,6 +27,13 @@
         <span class="data">{{ header.birthday }}</span>
       </li>
     </ul>
+    <ul class="option">
+      <li class="li-option">
+        <a href="{% url 'contact:edit' header.id header.contact_name %}"
+          >Edit</a
+        >
+      </li>
+    </ul>
   </div>
   <ul class="ul-container">
     <li class="numbers">

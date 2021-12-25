@@ -26,8 +26,10 @@ div.container {
     // }
 
     ul.ul-info {
-      // background-color: orange;
+      float: left;
+      width: calc(100% - 3rem);
       height: 100%;
+      // background-color: orange;
 
       li.li-info {
         // width: 18.5rem;
@@ -96,6 +98,23 @@ div.container {
       top: 5rem;
       left: 34rem;
       color: orange;
+    }
+
+    ul.option {
+      float: right;
+      width: 3rem;
+      height: 6rem;
+      // background-color: purple;
+
+      li.li-option {
+        height: 2rem;
+        a {
+          display: block;
+          line-height: 2rem;
+          text-align: center;
+          color: orange;
+        }
+      }
     }
   }
   ul.ul-container {

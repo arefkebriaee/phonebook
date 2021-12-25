@@ -12,14 +12,20 @@ class ContactForm(forms.Form):
     real_person = forms.CharField(max_length=20, required=False)
 
 
+class EditContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ('contact_name', 'first_name',
+                  'last_name', 'birthday', 'real_person')
+
+
 class MobileForm(forms.ModelForm):
+    class Meta:
+        model = Mobile
+        fields = ('mobile_number',)
 
-    def __init__(self, *args, **kwargs):
-        # first call parent's constructor
-        super(MobileForm, self).__init__(*args, **kwargs)
-        # there's a `fields` property now
-        self.fields['mobile_number'].required = False
 
+class EditMobileForm(forms.ModelForm):
     class Meta:
         model = Mobile
         fields = ('mobile_number',)

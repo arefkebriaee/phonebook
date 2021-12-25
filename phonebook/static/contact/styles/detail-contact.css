@@ -20,6 +20,8 @@ div.container div.info {
 }
 
 div.container div.info ul.ul-info {
+  float: left;
+  width: calc(100% - 3rem);
   height: 100%;
 }
 
@@ -85,6 +87,23 @@ div.container div.info p.birthday {
   position: absolute;
   top: 5rem;
   left: 34rem;
+  color: orange;
+}
+
+div.container div.info ul.option {
+  float: right;
+  width: 3rem;
+  height: 6rem;
+}
+
+div.container div.info ul.option li.li-option {
+  height: 2rem;
+}
+
+div.container div.info ul.option li.li-option a {
+  display: block;
+  line-height: 2rem;
+  text-align: center;
   color: orange;
 }
 

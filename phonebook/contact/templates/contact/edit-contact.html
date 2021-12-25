@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="/static/contact/styles/create-contact.css" />
 {% endblock styles %}{% block content %}
 <div class="container">
-  <form action="" method="post" enctype="multipart/form-data">
+  <form action="" method="put" enctype="multipart/form-data">
     {% csrf_token %}
     <ul class="ul-forms">
       <li class="li-forms">
@@ -41,7 +41,7 @@
         </ul>
       </li>
       <li class="li-forms" id="buttom">
-        <input type="submit" value="create" />
+        <input type="submit" value="edit" />
       </li>
       <!-- <input type="submit" value="create" /> -->
     </ul>

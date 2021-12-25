@@ -5,7 +5,7 @@ from rest_framework.settings import import_from_string
 from .models import Contact, Mobile, Phone, Fax, Social, Email, Address
 from .serializers import ContactSerializer, ContactCreateSerializer, MobileSerializer, PhoneSerializer, FaxSerializer, SocialSerializer, EmailSerializer, AddressSerializer
 from rest_framework.decorators import api_view
-from .forms import ContactForm, MobileForm, PhoneForm, FaxForm, SocialForm, EmailForm, AddressForm
+from .forms import ContactForm, EditContactForm, MobileForm, EditMobileForm, PhoneForm, FaxForm, SocialForm, EmailForm, AddressForm
 from django.contrib import messages
 from django.forms import formset_factory
 import itertools
@@ -24,8 +24,8 @@ def show_all(request):
 def one_contact(request, id, name):
     contact = get_object_or_404(Contact, id=id, contact_name=name)
     serializer = ContactSerializer(contact)
-    header_info = dict(itertools.islice(serializer.data.items(), 6))
-    body_info = dict(itertools.islice(serializer.data.items(), 6, None))
+    header_info = dict(itertools.islice(serializer.data.items(), 7))
+    body_info = dict(itertools.islice(serializer.data.items(), 7, None))
     return render(request, "contact/detail-contact.html",
                   {'header': header_info, 'body': body_info})
 
@@ -100,3 +100,24 @@ def create_contact(request):
     return render(request, 'contact/create-contact.html', {'contact_form': contact_form,
                                                            'mobile_form': mobile_form, 'phone_form': phone_form, 'fax_form': fax_form,
                                                            'social_form': social_form, 'email_form': email_form, 'address_form': address_form})
+
+
+@api_view(['GET', 'PUT'])
+def edit_contact(request, id, name):
+    contact = Contact.objects.get(
+        id=id, contact_name=name, creator=request.user)
+    print("&&&&&&&&&&\n", contact)
+    if request.method == 'PUT':
+        pass
+    else:
+        mobile = Mobile.objects.filter(owner=id)
+        print(mobile)
+        contact_form = EditContactForm(instance=contact)
+        # mobile_form = EditMobileForm(instance=mobile)
+        # phone_form = PhoneForm(instance=contact)
+        # fax_form = FaxForm(instance=contact)
+        # social_form = SocialForm(instance=contact)
+        # email_form = EmailForm(instance=contact)
+        # address_form = AddressForm(instance=contact)
+        return render(request, 'contact/edit-contact.html',
+                      {'contact_form': contact_form})
