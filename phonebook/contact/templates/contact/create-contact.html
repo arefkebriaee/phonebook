@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <ul class="form">
+      {{contact_form.as_ul}}
+      {{mobile_form.as_ul}}{{phone_form.as_ul}}{{fax_form.as_ul}}
+      {{social_form.as_ul}}{{email_form.as_ul}}{{address_form.as_ul}}
+      <input type="submit" value="create" />
+    </ul>
+  </form>
+</div>
+{% endblock content %}

@@ -33,7 +33,7 @@
       <span>mobile</span>
       <ul class="inner">
         {% for mobile in body.mobile %}
-        <li class="number">{{ mobile.number}}</li>
+        <li class="number">{{ mobile.mobile_number}}</li>
         {% endfor %}
       </ul>
     </li>
@@ -41,7 +41,7 @@
       <span>phone</span>
       <ul class="inner">
         {% for phone in body.phone %}
-        <li class="number">{{ phone.number}}</li>
+        <li class="number">{{ phone.phone_number}}</li>
         {% endfor %}
       </ul>
     </li>
@@ -49,7 +49,7 @@
       <span>fax</span>
       <ul class="inner">
         {% for fax in body.fax %}
-        <li class="number">{{ fax.number}}</li>
+        <li class="number">{{ fax.fax_number}}</li>
         {% endfor %}
       </ul>
     </li>
@@ -58,7 +58,7 @@
       <ul class="inner">
         {% for social in body.social %}
         <li class="number">
-          <a href="{{ social.address}}">{{social.name}}</a>
+          <a href="{{ social.social_address}}">{{social.social_name}}</a>
         </li>
         {% endfor %}
       </ul>

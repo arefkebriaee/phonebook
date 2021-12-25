@@ -10,6 +10,12 @@
     <li class="navbar-link">
       <a href="">{{request.user}}</a>
     </li>
+    <li class="navbar-link">
+      <a href="{% url 'contact:all' %}">All Contact</a>
+    </li>
+    <li class="navbar-link">
+      <a href="{% url 'contact:contact-create'%}">Add Contact</a>
+    </li>
     {% else %}
     <li class="navbar-link">
       <a href="{% url 'accounts:user_login'%}">Log in</a>
