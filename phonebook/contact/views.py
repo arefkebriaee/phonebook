@@ -9,6 +9,7 @@ from .forms import ContactForm, EditContactForm, MobileForm, EditMobileForm, Pho
 from django.contrib import messages
 from django.forms import formset_factory
 import itertools
+from django.views.decorators.csrf import csrf_exempt
 
 
 def home(request):
@@ -102,22 +103,72 @@ def create_contact(request):
                                                            'social_form': social_form, 'email_form': email_form, 'address_form': address_form})
 
 
-@api_view(['GET', 'PUT'])
-def edit_contact(request, id, name):
+# @api_view(['GET', 'POST'])
+@csrf_exempt
+def edit_contact(request, id, name, section=None, data=None):
+    print(section)
     contact = Contact.objects.get(
         id=id, contact_name=name, creator=request.user)
-    print("&&&&&&&&&&\n", contact)
-    if request.method == 'PUT':
-        pass
+    if request.method == 'POST':
+        if section == 'personal':
+            contact_form = EditContactForm(request.POST)
+            if contact_form.is_valid():
+                edited_contact = contact_form.save(commit=False)
+                edited_contact.id = contact.id
+                edited_contact.created = contact.created
+                edited_contact.save()
+
+        elif section == 'mobile':
+            mobile_form = EditMobileForm(request.POST)
+            if mobile_form.is_valid():
+                mobile = Mobile.objects.filter(owner=id, mobile_number=data).update(
+                    mobile_number=mobile_form.cleaned_data['mobile_number'])
+        elif section == 'phone':
+            phone_form = PhoneForm(request.POST)
+            if phone_form.is_valid():
+                phone = Phone.objects.filter(owner=id, phone_number=data).update(
+                    phone_number=phone_form.cleaned_data['phone_number'])
+        elif section == 'fax':
+            fax_form = FaxForm(request.POST)
+            if fax_form.is_valid():
+                fax = Fax.objects.filter(owner=id, fax_number=data).update(
+                    fax_number=fax_form.cleaned_data['fax_number'])
+        elif section == 'social':
+            social_form = SocialForm(request.POST)
+            if social_form.is_valid():
+                social = Social.objects.filter(owner=id, social_name=data).update(
+                    social_name=social_form.cleaned_data['social_name'],
+                    social_address=social_form.cleaned_data['social_address'])
+        elif section == 'email':
+            email_form = EmailForm(request.POST)
+            if email_form.is_valid():
+                email = Email.objects.filter(owner=id, email=data).update(
+                    email=email_form.cleaned_data['email'])
+        elif section == 'address':
+            address_form = AddressForm(request.POST)
+            if address_form.is_valid():
+                address = Address.objects.filter(owner=id, address=data).update(
+                    address=address_form.cleaned_data['address'])
+        return redirect('contact:detail', contact.id, contact.contact_name)
     else:
-        mobile = Mobile.objects.filter(owner=id)
-        print(mobile)
-        contact_form = EditContactForm(instance=contact)
-        # mobile_form = EditMobileForm(instance=mobile)
-        # phone_form = PhoneForm(instance=contact)
-        # fax_form = FaxForm(instance=contact)
-        # social_form = SocialForm(instance=contact)
-        # email_form = EmailForm(instance=contact)
-        # address_form = AddressForm(instance=contact)
-        return render(request, 'contact/edit-contact.html',
-                      {'contact_form': contact_form})
+        if section == 'personal':
+            form = EditContactForm(instance=contact)
+        elif section == 'mobile':
+            mobile = Mobile.objects.filter(owner=id, mobile_number=data)
+            form = EditMobileForm(instance=mobile[0])
+        elif section == 'phone':
+            phone = Phone.objects.filter(owner=id, phone_number=data)
+            form = PhoneForm(instance=phone[0])
+        elif section == 'fax':
+            fax = Fax.objects.filter(owner=id, fax_number=data)
+            form = FaxForm(instance=fax[0])
+        elif section == 'social':
+            social = Social.objects.filter(owner=id, social_name=data)
+            form = SocialForm(instance=social[0])
+        elif section == 'email':
+            email = Email.objects.filter(owner=id, email=data)
+            form = EmailForm(instance=email[0])
+        elif section == 'address':
+            address = Address.objects.filter(owner=id, address=data)
+            form = AddressForm(instance=address[0])
+        return render(request, 'contact/edit-contact.html', {'form': form})

@@ -1,0 +1,94 @@
+div.container {
+  display: block;
+  width: 30rem;
+  min-height: 30rem;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 2rem 2rem;
+  border-radius: 1rem;
+  background-color: rgba(8, 8, 49, 0.7);
+}
+
+div.container ul.form {
+  width: 100%;
+  height: 100%;
+}
+
+div.container ul.form li {
+  width: 100%;
+  height: 3rem;
+  padding: 0.5rem;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: black 4px 4px 10px;
+          box-shadow: black 4px 4px 10px;
+  background-color: rgba(8, 8, 49, 0.7);
+}
+
+div.container ul.form li label {
+  float: left;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  color: white;
+}
+
+div.container ul.form li input {
+  float: right;
+  width: 11rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  -webkit-box-shadow: inset #bebebe -4px -4px 5px;
+          box-shadow: inset #bebebe -4px -4px 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+div.container ul.form li select {
+  float: right;
+  width: 11rem;
+  height: 2rem;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+div.container ul.form li textarea {
+  float: right;
+  width: 18rem;
+  height: 9rem;
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+  resize: none;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+div.container input {
+  float: right;
+  width: 10rem;
+  height: 2rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: #b9b9b9 1px 1px 3px;
+          box-shadow: #b9b9b9 1px 1px 3px;
+  color: #080831;
+  background-color: white;
+  -webkit-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
+}
+
+div.container input:hover {
+  -webkit-box-shadow: #ffca67 1px 1px 3px;
+          box-shadow: #ffca67 1px 1px 3px;
+  background-color: orange;
+}
+/*# sourceMappingURL=edit-contact.css.map */

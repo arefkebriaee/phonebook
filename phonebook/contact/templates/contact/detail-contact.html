@@ -1,7 +1,18 @@
 {% extends 'base.html' %} {% load static %} {% block styles %}
 <!-- <link rel="stylesheet" href="/static/contact/styles/all-contact.css" /> -->
 <link rel="stylesheet" href="/static/contact/styles/detail-contact.css" />
-{% endblock styles %} {% block content %}
+{% endblock styles %} {% block content %} {% if form %}
+<form action="" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <ul class="ul-forms">
+    <li class="li-forms">
+      <ul class="form">
+        {{contact_form.as_ul}}
+      </ul>
+    </li>
+  </ul>
+</form>
+{% endif %}
 <div class="container">
   <!-- <img src="{{ contact.image }}" alt="" /> -->
   <div class="info">
@@ -29,7 +40,8 @@
     </ul>
     <ul class="option">
       <li class="li-option">
-        <a href="{% url 'contact:edit' header.id header.contact_name %}"
+        <a
+          href="{% url 'contact:edit' header.id header.contact_name 'personal' 'info' %}"
           >Edit</a
         >
       </li>
@@ -40,7 +52,14 @@
       <span>mobile</span>
       <ul class="inner">
         {% for mobile in body.mobile %}
-        <li class="number">{{ mobile.mobile_number}}</li>
+        <li class="number">
+          {{ mobile.mobile_number}}
+          <a
+            class="edit"
+            href="{% url 'contact:edit' header.id header.contact_name 'mobile' mobile.mobile_number %}"
+            >Edit</a
+          >
+        </li>
         {% endfor %}
       </ul>
     </li>
@@ -48,7 +67,14 @@
       <span>phone</span>
       <ul class="inner">
         {% for phone in body.phone %}
-        <li class="number">{{ phone.phone_number}}</li>
+        <li class="number">
+          {{ phone.phone_number}}
+          <a
+            class="edit"
+            href="{% url 'contact:edit' header.id header.contact_name 'phone' phone.phone_number %}"
+            >Edit</a
+          >
+        </li>
         {% endfor %}
       </ul>
     </li>
@@ -56,7 +82,14 @@
       <span>fax</span>
       <ul class="inner">
         {% for fax in body.fax %}
-        <li class="number">{{ fax.fax_number}}</li>
+        <li class="number">
+          {{ fax.fax_number}}
+          <a
+            class="edit"
+            href="{% url 'contact:edit' header.id header.contact_name 'fax' fax.fax_number %}"
+            >Edit</a
+          >
+        </li>
         {% endfor %}
       </ul>
     </li>
@@ -66,6 +99,11 @@
         {% for social in body.social %}
         <li class="number">
           <a href="{{ social.social_address}}">{{social.social_name}}</a>
+          <a
+            class="edit"
+            href="{% url 'contact:edit' header.id header.contact_name 'social' social.social_name %}"
+            >Edit</a
+          >
         </li>
         {% endfor %}
       </ul>
@@ -74,7 +112,14 @@
       <span>email</span>
       <ul class="inner">
         {% for email in body.email %}
-        <li class="number">{{email.email}}</li>
+        <li class="number">
+          {{email.email}}
+          <a
+            class="edit"
+            href="{% url 'contact:edit' header.id header.contact_name 'email' email.email %}"
+            >Edit</a
+          >
+        </li>
         {% endfor %}
       </ul>
     </li>
@@ -82,7 +127,14 @@
       <span>address</span>
       <ul class="inner">
         {% for address in body.address %}
-        <li class="number">{{address.address}}</li>
+        <li class="number">
+          <p>{{address.address}}</p>
+          <a
+            class="edit"
+            href="{% url 'contact:edit' header.id header.contact_name 'address' address.address %}"
+            >Edit</a
+          >
+        </li>
         {% endfor %}
       </ul>
     </li>

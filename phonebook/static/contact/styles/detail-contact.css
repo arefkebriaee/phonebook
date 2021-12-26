@@ -177,4 +177,30 @@ div.container ul.ul-container li.numbers ul.inner li.number {
 div.container ul.ul-container li.numbers ul.inner li.number:hover {
   color: orange;
 }
+
+div.container ul.ul-container li.numbers ul.inner li.number:hover a {
+  color: orange;
+}
+
+div.container ul.ul-container li.numbers ul.inner li.number:hover p {
+  color: orange;
+}
+
+div.container ul.ul-container li.numbers ul.inner li.number a:visited {
+  color: inherit;
+}
+
+div.container ul.ul-container li.numbers ul.inner li.number a.edit {
+  float: right;
+  margin-right: 0.5rem;
+  color: orange;
+}
+
+div.container ul.ul-container li.numbers ul.inner li.number p {
+  float: left;
+  width: calc(100% - 3rem);
+  min-height: 6rem;
+  color: white;
+  background-color: rgba(128, 0, 128, 0);
+}
 /*# sourceMappingURL=detail-contact.css.map */

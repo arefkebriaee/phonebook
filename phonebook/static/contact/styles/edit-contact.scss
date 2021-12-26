@@ -1,0 +1,88 @@
+div.container {
+  display: block;
+  width: 30rem;
+  min-height: 30rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem 2rem;
+  border-radius: 1rem;
+  background-color: rgba(8, 8, 49, 0.7);
+
+  ul.form {
+    width: 100%;
+    height: 100%;
+    // background-color: orange;
+
+    li {
+      width: 100%;
+      height: 3rem;
+      padding: 0.5rem;
+      margin-right: 2rem;
+      margin-bottom: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: black 4px 4px 10px;
+      background-color: rgba(8, 8, 49, 0.7);
+
+      label {
+        float: left;
+        font-size: 1.25rem;
+        line-height: 2rem;
+        color: white;
+      }
+
+      input {
+        float: right;
+        width: 11rem;
+        height: 2rem;
+        padding: 0 0.5rem;
+        font-size: 1rem;
+        border-radius: 0.25rem;
+        border: none;
+        box-shadow: inset rgb(190, 190, 190) -4px -4px 5px;
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+
+      select {
+        float: right;
+        width: 11rem;
+        height: 2rem;
+        border-radius: 0.25rem;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+
+      textarea {
+        float: right;
+        width: 18rem;
+        height: 9rem;
+        padding: 0.5rem 0.5rem;
+        font-size: 1rem;
+        resize: none;
+        border: none;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+
+  input {
+    float: right;
+    width: 10rem;
+    height: 2rem;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: rgb(185, 185, 185) 1px 1px 3px;
+    color: rgb(8, 8, 49);
+    background-color: white;
+    transition: ease-in-out 0.3s;
+
+    &:hover {
+      box-shadow: rgb(255, 202, 103) 1px 1px 3px;
+      background-color: orange;
+    }
+  }
+}

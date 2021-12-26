@@ -178,10 +178,36 @@ div.container {
           padding-left: 1rem;
           transition: ease-in-out 0.3s;
           letter-spacing: 0.5px;
-          //   background-color: pink;
+          // background-color: pink;
 
           &:hover {
             color: orange;
+
+            a {
+              color: orange;
+            }
+
+            p {
+              color: orange;
+            }
+          }
+
+          a:visited {
+            color: inherit;
+          }
+
+          a.edit {
+            float: right;
+            margin-right: 0.5rem;
+            color: orange;
+          }
+
+          p {
+            float: left;
+            width: calc(100% - 3rem);
+            min-height: 6rem;
+            color: white;
+            background-color: rgba(128, 0, 128, 0);
           }
         }
       }
