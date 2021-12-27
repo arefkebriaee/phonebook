@@ -1,3 +1,24 @@
+a.a-option {
+  // display: block;
+  float: right;
+  width: 1rem;
+  height: 1rem;
+  // background-image: url("/static/public/images/editing.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 0.5rem;
+  // background-color: white;
+}
+
+.edit {
+  background-image: url("/static/public/images/editing.png");
+}
+
+.delete {
+  background-image: url("/static/public/images/trash.png");
+}
+
 div.container {
   display: block;
   width: 70rem;
@@ -108,11 +129,14 @@ div.container {
 
       li.li-option {
         height: 2rem;
-        a {
+        // background-color: cornflowerblue;
+        .edit,
+        .delete {
           display: block;
-          line-height: 2rem;
-          text-align: center;
-          color: orange;
+          float: left;
+          width: 1.5rem;
+          height: 1.5rem;
+          // margin: auto;
         }
       }
     }
@@ -196,11 +220,19 @@ div.container {
             color: inherit;
           }
 
-          a.edit {
-            float: right;
-            margin-right: 0.5rem;
-            color: orange;
-          }
+          // a.edit {
+          //   // display: block;
+          //   float: right;
+          //   width: 1rem;
+          //   height: 1rem;
+          //   margin: auto;
+          //   background-image: url("/static/public/images/editing.png");
+          //   background-position: center;
+          //   background-size: cover;
+          //   background-repeat: no-repeat;
+          //   margin-right: 0.5rem;
+          //   color: orange;
+          // }
 
           p {
             float: left;

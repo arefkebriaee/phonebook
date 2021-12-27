@@ -41,9 +41,16 @@
     <ul class="option">
       <li class="li-option">
         <a
+          class="a-option edit"
           href="{% url 'contact:edit' header.id header.contact_name 'personal' 'info' %}"
-          >Edit</a
-        >
+        ></a>
+      </li>
+      <li class="li-option">
+        <a
+          class="a-option delete"
+          href="{% url 'contact:delete' header.id header.contact_name 'personal' 'info' %}"
+          onclick="return confirm('Are you sure you want to delete {{ header.contact_name }}?');"
+        ></a>
       </li>
     </ul>
   </div>
@@ -55,10 +62,14 @@
         <li class="number">
           {{ mobile.mobile_number}}
           <a
-            class="edit"
+            class="a-option edit"
             href="{% url 'contact:edit' header.id header.contact_name 'mobile' mobile.mobile_number %}"
-            >Edit</a
-          >
+          ></a>
+          <a
+            class="a-option delete"
+            href="{% url 'contact:delete' header.id header.contact_name 'mobile' mobile.mobile_number %}"
+            onclick="return confirm('Are you sure you want to delete {{ mobile.mobile_number}}?');"
+          ></a>
         </li>
         {% endfor %}
       </ul>
@@ -70,10 +81,14 @@
         <li class="number">
           {{ phone.phone_number}}
           <a
-            class="edit"
+            class="a-option edit"
             href="{% url 'contact:edit' header.id header.contact_name 'phone' phone.phone_number %}"
-            >Edit</a
-          >
+          ></a>
+          <a
+            class="a-option delete"
+            href="{% url 'contact:delete' header.id header.contact_name 'phone' phone.phone_number %}"
+            onclick="return confirm('Are you sure you want to delete {{ phone.phone_number}}?');"
+          ></a>
         </li>
         {% endfor %}
       </ul>
@@ -85,10 +100,14 @@
         <li class="number">
           {{ fax.fax_number}}
           <a
-            class="edit"
+            class="a-option edit"
             href="{% url 'contact:edit' header.id header.contact_name 'fax' fax.fax_number %}"
-            >Edit</a
-          >
+          ></a>
+          <a
+            class="a-option delete"
+            href="{% url 'contact:delete' header.id header.contact_name 'fax' fax.fax_number %}"
+            onclick="return confirm('Are you sure you want to delete {{ fax.fax_number}}?');"
+          ></a>
         </li>
         {% endfor %}
       </ul>
@@ -100,10 +119,14 @@
         <li class="number">
           <a href="{{ social.social_address}}">{{social.social_name}}</a>
           <a
-            class="edit"
+            class="a-option edit"
             href="{% url 'contact:edit' header.id header.contact_name 'social' social.social_name %}"
-            >Edit</a
-          >
+          ></a>
+          <a
+            class="a-option delete"
+            href="{% url 'contact:delete' header.id header.contact_name 'social' social.social_name %}"
+            onclick="return confirm('Are you sure you want to delete {{social.social_name}}?');"
+          ></a>
         </li>
         {% endfor %}
       </ul>
@@ -115,10 +138,14 @@
         <li class="number">
           {{email.email}}
           <a
-            class="edit"
+            class="a-option edit"
             href="{% url 'contact:edit' header.id header.contact_name 'email' email.email %}"
-            >Edit</a
-          >
+          ></a>
+          <a
+            class="a-option delete"
+            href="{% url 'contact:delete' header.id header.contact_name 'email' email.email %}"
+            onclick="return confirm('Are you sure you want to delete {{email.email}}?');"
+          ></a>
         </li>
         {% endfor %}
       </ul>
@@ -130,10 +157,14 @@
         <li class="number">
           <p>{{address.address}}</p>
           <a
-            class="edit"
+            class="a-option edit"
             href="{% url 'contact:edit' header.id header.contact_name 'address' address.address %}"
-            >Edit</a
-          >
+          ></a>
+          <a
+            class="a-option delete"
+            href="{% url 'contact:delete' header.id header.contact_name 'address' address.address %}"
+            onclick="return confirm('Are you sure you want to delete {{address.address}}?');"
+          ></a>
         </li>
         {% endfor %}
       </ul>

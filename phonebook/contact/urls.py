@@ -13,4 +13,6 @@ urlpatterns = [
     path("create/", views.create_contact, name='contact-create'),
     path("edit/<int:id>/<str:name>/<str:section>/<str:data>/",
          views.edit_contact, name='edit'),
+    path("delete/<int:id>/<str:name>/<str:section>/<str:data>/",
+         views.delete, name='delete'),
 ]

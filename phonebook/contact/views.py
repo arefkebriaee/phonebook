@@ -106,18 +106,22 @@ def create_contact(request):
 # @api_view(['GET', 'POST'])
 @csrf_exempt
 def edit_contact(request, id, name, section=None, data=None):
-    print(section)
     contact = Contact.objects.get(
         id=id, contact_name=name, creator=request.user)
     if request.method == 'POST':
         if section == 'personal':
             contact_form = EditContactForm(request.POST)
             if contact_form.is_valid():
-                edited_contact = contact_form.save(commit=False)
-                edited_contact.id = contact.id
-                edited_contact.created = contact.created
-                edited_contact.save()
-
+                # edited_contact = contact_form.save(commit=False)
+                Contact.objects.filter(
+                    id=id, contact_name=name, creator=request.user).update(
+                    id=contact.id,
+                    contact_name=contact_form.cleaned_data['contact_name'],
+                    first_name=contact_form.cleaned_data['first_name'],                                                                      last_name=contact_form.cleaned_data['last_name'],
+                    birthday=contact_form.cleaned_data['birthday'],
+                    creator=request.user,
+                    real_person=contact_form.cleaned_data['real_person'],
+                    created=contact.created)
         elif section == 'mobile':
             mobile_form = EditMobileForm(request.POST)
             if mobile_form.is_valid():
@@ -172,3 +176,23 @@ def edit_contact(request, id, name, section=None, data=None):
             address = Address.objects.filter(owner=id, address=data)
             form = AddressForm(instance=address[0])
         return render(request, 'contact/edit-contact.html', {'form': form})
+
+
+def delete(request, id, name, section=None, data=None):
+    contact = Contact.objects.get(id=id, contact_name=name)
+    if section == 'personal':
+        contact.delete()
+        return redirect('contact:all')
+    elif section == 'mobile':
+        contact.mobile.get(mobile_number=data).delete()
+    elif section == 'phone':
+        contact.phone.get(phone_number=data).delete()
+    elif section == 'fax':
+        contact.fax.get(fax_number=data).delete()
+    elif section == 'social':
+        contact.social.get(social_name=data).delete()
+    elif section == 'email':
+        contact.email.get(email=data).delete()
+    elif section == 'address':
+        contact.address.get(address=data).delete()
+    return redirect('contact:detail', contact.id, contact.contact_name)
