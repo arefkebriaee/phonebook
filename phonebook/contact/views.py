@@ -233,3 +233,27 @@ def add_number(request, id, name, section=None):
         elif section == 'address':
             form = AddressForm()
         return render(request, 'contact/add-number.html', {'form': form})
+
+
+@csrf_exempt
+def search(request):
+    name = request.GET['searchbox']
+    contact_list = Contact.objects.filter(contact_name=name)
+    print(not contact_list)
+    if not contact_list:
+        contact = []
+        suggest = Contact.objects.filter(contact_name__startswith=name)
+        if not suggest:
+            suggest = Contact.objects.filter(contact_name__startswith=name[:2])
+            if not suggest:
+                suggest = Contact.objects.filter(
+                    contact_name__startswith=name[:1])
+                if not suggest:
+                    suggest = Contact.objects.filter(
+                        contact_name__contains=name[:1])
+    else:
+        suggest = []
+        contact = contact_list[0]
+    print(contact)
+    print(suggest)
+    return render(request, 'contact/search-resault.html', {'contact': contact, 'suggest': suggest})

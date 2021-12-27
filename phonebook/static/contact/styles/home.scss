@@ -23,7 +23,7 @@ section.container {
     top: 1rem;
     // background-color: orange;
 
-    input {
+    input.input {
       // box-sizing: border-box;
       width: 24rem;
       height: 3rem;
@@ -41,7 +41,7 @@ section.container {
       }
     }
 
-    button {
+    input.btn {
       float: right;
       width: 6rem;
       height: 3rem;

@@ -24,7 +24,7 @@ section.container div.search {
   top: 1rem;
 }
 
-section.container div.search input {
+section.container div.search input.input {
   width: 24rem;
   height: 3rem;
   float: left;
@@ -36,12 +36,12 @@ section.container div.search input {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-section.container div.search input:focus {
+section.container div.search input.input:focus {
   border: none;
   text-decoration: none;
 }
 
-section.container div.search button {
+section.container div.search input.btn {
   float: right;
   width: 6rem;
   height: 3rem;

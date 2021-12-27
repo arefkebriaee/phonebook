@@ -25,6 +25,9 @@ class Contact(models.Model):
     def get_absolute_url(self):
         return reverse("contact:detail", args=[self.id, self.contact_name])
 
+    class Meta:
+        ordering = ['contact_name']
+
 
 class Mobile(models.Model):
     owner = models.ForeignKey(

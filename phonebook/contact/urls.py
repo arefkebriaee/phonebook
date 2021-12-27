@@ -17,4 +17,5 @@ urlpatterns = [
          views.delete, name='delete'),
     path("add/<int:id>/<str:name>/<str:section>/",
          views.add_number, name='add'),
+    path('search/', views.search, name='search'),
 ]

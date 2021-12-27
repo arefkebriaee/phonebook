@@ -4,7 +4,10 @@
 <section class="container">
   <!-- <p>Well come to phonebook</p> -->
   <div class="search">
-    <input type="text" /><button type="submit">search</button>
+    <form action="{% url 'contact:search' %}" method="get">
+      <input class="input" type="text" name="searchbox" />
+      <input class="btn" type="submit" value="search" />
+    </form>
   </div>
 </section>
 {% endblock content %}

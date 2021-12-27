@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% block styles %}
+<!-- <link rel="stylesheet" href="/static/contact/styles/all-contact.css" /> -->
+<link rel="stylesheet" href="/static/contact/styles/search-resault.css" />
+{% endblock styles %} {% block content %}
+<!-- <div class="container"> -->
+<div class="search">
+  <form action="{% url 'contact:search' %}" method="get">
+    <input class="input" type="text" name="searchbox" />
+    <input class="btn" type="submit" value="search" />
+  </form>
+</div>
+<!-- </div> -->
+<div class="main">
+  <div class="search-container">
+    <p>search resault</p>
+    <ul>
+      {% if contact %}
+      <li class="card">
+        <a href="{{ contact.get_absolute_url }}">
+          <h3>{{ contact.contact_name }}</h3>
+        </a>
+      </li>
+      {% else %}
+      <!-- <li class="card"> -->
+      <p class="error">Sorry, There is not match contact</p>
+      <!-- </li> -->
+      {% endif %}
+    </ul>
+  </div>
+  <div class="search-container">
+    <p>suggest contacts</p>
+    <ul>
+      {% if suggest %} {% for contact in suggest %}
+      <li class="card">
+        <a href="{{ contact.get_absolute_url }}">
+          <h3>{{ contact.contact_name }}</h3>
+        </a>
+      </li>
+      {% endfor %} {% endif %}
+    </ul>
+  </div>
+</div>
+{% endblock content %}

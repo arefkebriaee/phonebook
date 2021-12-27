@@ -1,0 +1,131 @@
+div.search {
+  display: block;
+  width: 30rem;
+  height: 3rem;
+  margin: auto;
+  margin-bottom: 4rem;
+  top: 2rem;
+}
+
+div.search input.input {
+  width: 24rem;
+  height: 3rem;
+  float: left;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border: solid #080831 2px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+div.search input.input:focus {
+  border: none;
+  text-decoration: none;
+}
+
+div.search input.btn {
+  float: right;
+  width: 6rem;
+  height: 3rem;
+  font-size: 1.25rem;
+  letter-spacing: 1.5px;
+  border-radius: 0.5rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border: none;
+  cursor: pointer;
+  color: orange;
+  background-color: #080831;
+}
+
+div.main {
+  width: 70rem;
+  height: 28rem;
+  margin: auto;
+}
+
+div.main div.search-container {
+  display: block;
+  width: 60rem;
+  height: 13rem;
+  padding: 1rem 2rem;
+  margin: auto;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  background-color: rgba(8, 8, 49, 0.7);
+}
+
+div.main div.search-container p {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+}
+
+div.main div.search-container p.error {
+  left: 2rem;
+  line-height: 4rem;
+}
+
+div.main div.search-container ul {
+  display: block;
+  height: 9rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0.5rem;
+}
+
+div.main div.search-container ul li.card {
+  float: left;
+  width: calc((100% - 4rem) / 3);
+  height: 4rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: black 4px 4px 10px;
+          box-shadow: black 4px 4px 10px;
+  background-color: rgba(8, 8, 49, 0.85);
+  -webkit-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
+}
+
+div.main div.search-container ul li.card:nth-of-type(3n + 3) {
+  margin-right: 0;
+}
+
+div.main div.search-container ul li.card:hover {
+  -webkit-box-shadow: #1d1d1d 4px 4px 10px;
+          box-shadow: #1d1d1d 4px 4px 10px;
+  background-color: rgba(123, 123, 163, 0.7);
+}
+
+div.main div.search-container ul li.card:hover h3 {
+  color: #080831;
+}
+
+div.main div.search-container ul li.card a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+div.main div.search-container ul li.card a img {
+  width: 4rem;
+  height: 4rem;
+  top: -2rem;
+  border-radius: 10rem;
+  border: solid rgba(8, 8, 49, 0.85) 2px;
+  background-color: white;
+}
+
+div.main div.search-container ul li.card a h3 {
+  left: 2rem;
+  line-height: 4rem;
+  font-size: 1.25rem;
+  color: white;
+  -webkit-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
+}
+/*# sourceMappingURL=search-resault.css.map */
