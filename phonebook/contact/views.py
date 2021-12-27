@@ -196,3 +196,40 @@ def delete(request, id, name, section=None, data=None):
     elif section == 'address':
         contact.address.get(address=data).delete()
     return redirect('contact:detail', contact.id, contact.contact_name)
+
+
+@csrf_exempt
+def add_number(request, id, name, section=None):
+    contact = Contact.objects.get(id=id, contact_name=name)
+    if request.method == 'POST':
+        if section == 'mobile':
+            form = MobileForm(request.POST)
+        elif section == 'phone':
+            form = PhoneForm(request.POST)
+        elif section == 'fax':
+            form = FaxForm(request.POST)
+        elif section == 'social':
+            form = SocialForm(request.POST)
+        elif section == 'email':
+            form = EmailForm(request.POST)
+        elif section == 'address':
+            form = AddressForm(request.POST)
+        if form.is_valid():
+            new_obj = form.save(commit=False)
+            new_obj.owner = contact
+            new_obj.save()
+        return redirect('contact:detail', contact.id, contact.contact_name)
+    else:
+        if section == 'mobile':
+            form = MobileForm()
+        elif section == 'phone':
+            form = PhoneForm()
+        elif section == 'fax':
+            form = FaxForm()
+        elif section == 'social':
+            form = SocialForm()
+        elif section == 'email':
+            form = EmailForm()
+        elif section == 'address':
+            form = AddressForm()
+        return render(request, 'contact/add-number.html', {'form': form})

@@ -35,7 +35,9 @@
       </li>
       <li class="li-info">
         <span class="title">birthday :</span>
+        {% if header.birthdat %}
         <span class="data">{{ header.birthday }}</span>
+        {% endif %}
       </li>
     </ul>
     <ul class="option">
@@ -57,6 +59,10 @@
   <ul class="ul-container">
     <li class="numbers">
       <span>mobile</span>
+      <a
+        class="a-option add"
+        href="{% url 'contact:add' header.id header.contact_name 'mobile' %}"
+      ></a>
       <ul class="inner">
         {% for mobile in body.mobile %}
         <li class="number">
@@ -76,6 +82,10 @@
     </li>
     <li class="numbers">
       <span>phone</span>
+      <a
+        class="a-option add"
+        href="{% url 'contact:add' header.id header.contact_name 'phone' %}"
+      ></a>
       <ul class="inner">
         {% for phone in body.phone %}
         <li class="number">
@@ -95,6 +105,10 @@
     </li>
     <li class="numbers">
       <span>fax</span>
+      <a
+        class="a-option add"
+        href="{% url 'contact:add' header.id header.contact_name 'fax' %}"
+      ></a>
       <ul class="inner">
         {% for fax in body.fax %}
         <li class="number">
@@ -114,6 +128,10 @@
     </li>
     <li class="numbers">
       <span>social media</span>
+      <a
+        class="a-option add"
+        href="{% url 'contact:add' header.id header.contact_name 'social' %}"
+      ></a>
       <ul class="inner">
         {% for social in body.social %}
         <li class="number">
@@ -133,6 +151,10 @@
     </li>
     <li class="numbers">
       <span>email</span>
+      <a
+        class="a-option add"
+        href="{% url 'contact:add' header.id header.contact_name 'email' %}"
+      ></a>
       <ul class="inner">
         {% for email in body.email %}
         <li class="number">
@@ -152,6 +174,10 @@
     </li>
     <li class="numbers">
       <span>address</span>
+      <a
+        class="a-option add"
+        href="{% url 'contact:add' header.id header.contact_name 'address' %}"
+      ></a>
       <ul class="inner">
         {% for address in body.address %}
         <li class="number">

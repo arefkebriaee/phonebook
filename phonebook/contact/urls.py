@@ -15,4 +15,6 @@ urlpatterns = [
          views.edit_contact, name='edit'),
     path("delete/<int:id>/<str:name>/<str:section>/<str:data>/",
          views.delete, name='delete'),
+    path("add/<int:id>/<str:name>/<str:section>/",
+         views.add_number, name='add'),
 ]

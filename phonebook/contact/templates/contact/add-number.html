@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block styles %}
+<link rel="stylesheet" href="/static/contact/styles/edit-contact.css" />
+{% endblock styles %}{% block content %}
+<div class="container">
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <ul class="form">
+      {{form.as_ul}}
+    </ul>
+    <input type="submit" value="save" />
+  </form>
+</div>
+{% endblock content %}
