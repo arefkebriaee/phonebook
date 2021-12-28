@@ -48,15 +48,17 @@ html {
     }
 
     p.message {
-      display: block;
-      max-width: 20rem;
-      min-width: 10rem;
-      height: 3rem;
+      display: none;
+      max-width: 50rem;
+      // min-width: 10rem;
+      // height: 3rem;
+      padding: 0.25rem 2rem;
       margin: auto;
       margin-top: 1rem;
       margin-bottom: 1rem;
       text-align: center;
       line-height: 2.5rem;
+      // visibility: hidden;
       border-radius: 0.5rem;
       border: solid rgba(69, 156, 69, 0.8) 2px;
       color: white;

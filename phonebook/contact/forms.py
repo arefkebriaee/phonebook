@@ -20,6 +20,11 @@ class EditContactForm(forms.ModelForm):
 
 
 class MobileForm(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super(MobileForm, self).__init__(*args, **kwargs)
+        self.fields['mobile_number'].required = False
+
     class Meta:
         model = Mobile
         fields = ('mobile_number',)
@@ -33,9 +38,9 @@ class EditMobileForm(forms.ModelForm):
 
 class PhoneForm(forms.ModelForm):
 
-    # def __init__(self, *args, **kwargs):
-    #     super(PhoneForm, self).__init__(*args, **kwargs)
-    #     self.fields['phone_number'].required = False
+    def __init__(self, *args, **kwargs):
+        super(PhoneForm, self).__init__(*args, **kwargs)
+        self.fields['phone_number'].required = False
 
     class Meta:
         model = Phone
@@ -44,9 +49,9 @@ class PhoneForm(forms.ModelForm):
 
 class FaxForm(forms.ModelForm):
 
-    # def __init__(self, *args, **kwargs):
-    #     super(FaxForm, self).__init__(*args, **kwargs)
-    #     self.fields['fax_number'].required = False
+    def __init__(self, *args, **kwargs):
+        super(FaxForm, self).__init__(*args, **kwargs)
+        self.fields['fax_number'].required = False
 
     class Meta:
         model = Fax
@@ -54,18 +59,34 @@ class FaxForm(forms.ModelForm):
 
 
 class SocialForm(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super(SocialForm, self).__init__(*args, **kwargs)
+        self.fields['social_name'].required = False
+        self.fields['social_address'].required = False
+
     class Meta:
         model = Social
         fields = ('social_name', 'social_address')
 
 
 class EmailForm(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super(EmailForm, self).__init__(*args, **kwargs)
+        self.fields['email'].required = False
+
     class Meta:
         model = Email
         fields = ('email',)
 
 
 class AddressForm(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super(AddressForm, self).__init__(*args, **kwargs)
+        self.fields['address'].required = False
+
     class Meta:
         model = Address
         fields = ('address',)

@@ -1,6 +1,13 @@
-{% extends 'base.html' %} {% block content %}
-<form action="" method="post">
-  {% csrf_token %} {{ form.as_p }}
-  <input type="submit" value="Register" />
-</form>
+{% extends 'base.html' %} {% block styles %}
+<link rel="stylesheet" href="/static/contact/styles/edit-contact.css" />
+{% endblock styles %} {% block content %}
+<div class="container">
+  <form action="" method="post">
+    {% csrf_token %}
+    <ul class="form">
+      {{form.as_ul}}
+    </ul>
+    <input type="submit" value="Register" />
+  </form>
+</div>
 {% endblock content %}

@@ -51,10 +51,9 @@ html body div.navbar ul.navbar-ul li.navbar-link a {
 }
 
 html body p.message {
-  display: block;
-  max-width: 20rem;
-  min-width: 10rem;
-  height: 3rem;
+  display: none;
+  max-width: 50rem;
+  padding: 0.25rem 2rem;
   margin: auto;
   margin-top: 1rem;
   margin-bottom: 1rem;

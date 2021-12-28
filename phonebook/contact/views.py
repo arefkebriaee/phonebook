@@ -34,7 +34,6 @@ def one_contact(request, id, name):
 @api_view(['GET', 'POST'])
 def create_contact(request):
     if request.method == 'POST':
-        print(request.data)
         serializer = ContactCreateSerializer(data=request.data)
         if serializer.is_valid():
             real_person_status = 'Real person'
@@ -112,7 +111,6 @@ def edit_contact(request, id, name, section=None, data=None):
         if section == 'personal':
             contact_form = EditContactForm(request.POST)
             if contact_form.is_valid():
-                # edited_contact = contact_form.save(commit=False)
                 Contact.objects.filter(
                     id=id, contact_name=name, creator=request.user).update(
                     id=contact.id,
@@ -239,7 +237,6 @@ def add_number(request, id, name, section=None):
 def search(request):
     name = request.GET['searchbox']
     contact_list = Contact.objects.filter(contact_name=name)
-    print(not contact_list)
     if not contact_list:
         contact = []
         suggest = Contact.objects.filter(contact_name__startswith=name)
@@ -254,6 +251,4 @@ def search(request):
     else:
         suggest = []
         contact = contact_list[0]
-    print(contact)
-    print(suggest)
     return render(request, 'contact/search-resault.html', {'contact': contact, 'suggest': suggest})
